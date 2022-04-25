@@ -37,11 +37,20 @@ def get_users_data():
     print(user_country)
     user_city = input('\nEnter your city: ')
     print(user_city)
+
     user_rent = input('\nDo you pay rent? (Y or N):  ')
-    print(user_rent)
+    validate_data(user_rent)
+
     user_children = input('\nHow many children do you have? (0 for None):  ')
     print(user_children)
-    
+
+def validate_data(values):
+    try:
+        if values != 'Y' and values != 'y' and values != 'N' and values != 'n':
+            raise ValueError('deu erro')
+    except ValueError as e:   
+        print(f'{e}, tente novamente') 
+
 
 get_users_data()
     
