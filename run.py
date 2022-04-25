@@ -33,6 +33,7 @@ def get_users_data():
     print(user_age)
     user_gender = input('\nEnter your gender (M or F): ')
     print(user_gender)
+
     user_country = input('\nEnter your country: ')
     print(user_country)
     user_city = input('\nEnter your city: ')
@@ -46,11 +47,10 @@ def get_users_data():
 
 def validate_data(values):
     try:
-        if values != 'Y' and values != 'y' and values != 'N' and values != 'n':
-            raise ValueError('deu erro')
+        if (values not in ['Y','y','N','n']):
+            raise ValueError('deu erro')    
     except ValueError as e:   
         print(f'{e}, tente novamente') 
 
 
-get_users_data()
-    
+get_users_data()    
