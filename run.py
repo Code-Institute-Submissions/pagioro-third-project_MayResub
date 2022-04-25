@@ -32,7 +32,7 @@ def get_users_data():
     user_age = input('\nEnter your age: ')
     print(user_age)
     user_gender = input('\nEnter your gender (M or F): ')
-    print(user_gender)
+    validate_data(1,user_gender)
 
     user_country = input('\nEnter your country: ')
     print(user_country)
@@ -40,15 +40,17 @@ def get_users_data():
     print(user_city)
 
     user_rent = input('\nDo you pay rent? (Y or N):  ')
-    validate_data(user_rent)
+    validate_data(2,user_rent)
 
     user_children = input('\nHow many children do you have? (0 for None):  ')
     print(user_children)
 
-def validate_data(values):
+def validate_data(value1,value2):
     try:
-        if (values not in ['Y','y','N','n']):
+        if ((value1 == 1) and (value2 not in ['M','m','F','f'])):
             raise ValueError('deu erro')    
+        if ((value1 == 2) and (value2 not in ['Y','y','N','n'])):
+            raise ValueError('deu erro')      
     except ValueError as e:   
         print(f'{e}, tente novamente') 
 
