@@ -95,5 +95,17 @@ def update_census_worksheet(data):
     census_worksheet.append_row(data)
     print('Census worksheet updated successfully.\n')
 
-data = get_users_data() 
-update_census_worksheet(data)
+def update_female_data(census_row):
+    """
+    Insert the female information into the female worksheet.
+    """
+    print('Saving female data.../n')
+
+
+
+def main():
+    data = get_users_data() 
+    update_census_worksheet(data)
+    update_female_data(data)
+
+main()
