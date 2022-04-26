@@ -28,45 +28,40 @@ def get_users_data():
     while True:
         user_name = input('Enter your name: ')        
         if validate_data(0,user_name):            
-            break    
+            break         
 
     while True:
-
         user_email = input('\nEnter your email: ')
         if validate_data(1,user_email):            
-            break
-
+            break    
     
     while True:
-
         user_age = input('\nEnter your age: ')
         if validate_data(2,user_age):            
-            break
-
+            break    
     
     while True:
-
         user_gender = input('\nEnter your gender (M or F): ')
         if validate_data(3,user_gender):            
-            break
-
+            break    
     
-    user_country = input('\nEnter your country: ')
+    user_country = input('\nEnter your country: ')    
+
     user_city = input('\nEnter your city: ')
+    
 
     while True:
-
         user_rent = input('\nDo you pay rent? (Y or N):  ')
         if validate_data(4,user_rent):            
-            break
-
+            break    
     
     while True:
-
         user_children = input('\nHow many children do you have? (0 for None):  ')
         if validate_data(5,user_children):            
             break
 
+    return user_name, user_email, user_age, user_gender, user_country, user_city, user_rent, user_children
+    
     
 def validate_data(value1,value2):
     try:
@@ -91,4 +86,14 @@ def validate_data(value1,value2):
 
     return True 
 
-get_users_data()    
+def update_census_worksheet(data):
+    """
+    Update Census worksheet with data
+    """
+    print('Updating Census worksheet...\n')
+    census_worksheet = SHEET.worksheet("census")
+    census_worksheet.append_row(data)
+    print('Census worksheet updated successfully.\n')
+
+data = get_users_data() 
+update_census_worksheet(data)
