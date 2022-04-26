@@ -25,27 +25,49 @@ def get_users_data():
     print('Welcome to the 2022 Census.') 
     print('Please fill in the requested data!\n')  
 
-    user_name = input('Enter your name: ')
-    validate_data(0,user_name)
+    while True:
+        user_name = input('Enter your name: ')        
+        if validate_data(0,user_name):            
+            break    
 
-    user_email = input('\nEnter your email: ')
-    validate_data(1,user_email)
+    while True:
 
-    user_age = input('\nEnter your age: ')
-    validate_data(2,user_age)
+        user_email = input('\nEnter your email: ')
+        if validate_data(1,user_email):            
+            break
 
-    user_gender = input('\nEnter your gender (M or F): ')
-    validate_data(3,user_gender)
+    
+    while True:
 
+        user_age = input('\nEnter your age: ')
+        if validate_data(2,user_age):            
+            break
+
+    
+    while True:
+
+        user_gender = input('\nEnter your gender (M or F): ')
+        if validate_data(3,user_gender):            
+            break
+
+    
     user_country = input('\nEnter your country: ')
     user_city = input('\nEnter your city: ')
 
-    user_rent = input('\nDo you pay rent? (Y or N):  ')
-    validate_data(4,user_rent)
+    while True:
 
-    user_children = input('\nHow many children do you have? (0 for None):  ')
-    validate_data(5,user_children)
+        user_rent = input('\nDo you pay rent? (Y or N):  ')
+        if validate_data(4,user_rent):            
+            break
 
+    
+    while True:
+
+        user_children = input('\nHow many children do you have? (0 for None):  ')
+        if validate_data(5,user_children):            
+            break
+
+    
 def validate_data(value1,value2):
     try:
         """
@@ -64,6 +86,9 @@ def validate_data(value1,value2):
         if ((value1 == 5) and (int(value2) >= 12)):
             raise ValueError()     
     except ValueError as e:   
-        print(f'Invalid data.\n') 
+        print(f'Invalid data.\n')
+        return False
+
+    return True 
 
 get_users_data()    
