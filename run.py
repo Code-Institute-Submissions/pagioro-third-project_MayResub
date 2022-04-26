@@ -100,7 +100,11 @@ def update_female_data(census_row):
     Insert the female information into the female worksheet.
     """
     print('Saving female data.../n')
-
+    """
+    if (SHEET.worksheet('census').col_values(4) in ('F','f')):       
+        val = SHEET.worksheet('census').row_values()
+        print(val)
+    """
 
 
 def main():
