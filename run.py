@@ -42,6 +42,7 @@ def get_users_data():
     
     while True:
         user_gender = input('\nEnter your gender (M or F): ')
+        user_gender = user_gender.upper()
         if validate_data(3,user_gender):            
             break    
     
@@ -52,6 +53,7 @@ def get_users_data():
 
     while True:
         user_rent = input('\nDo you pay rent? (Y or N):  ')
+        user_rent = user_rent.upper()
         if validate_data(4,user_rent):            
             break    
     
@@ -94,22 +96,23 @@ def update_census_worksheet(data):
     census_worksheet = SHEET.worksheet("census")
     census_worksheet.append_row(data)
     print('Census worksheet updated successfully.\n')
-
+    
 def update_female_data(census_row):
     """
     Insert the female information into the female worksheet.
     """
     print('Saving female data.../n')
-    """
-    if (SHEET.worksheet('census').col_values(4) in ('F','f')):       
-        val = SHEET.worksheet('census').row_values()
-        print(val)
-    """
 
+    female_data = SHEET.worksheet('census').col_values(4)
+    print(female_data)
+    female = [f for f in female_data if ("F" in f)]
+    print(female)
+    female_worksheet = SHEET.worksheet("female")
+    female_worksheet.append_row(female)
 
 def main():
-    data = get_users_data() 
+    data = get_users_data()
     update_census_worksheet(data)
     update_female_data(data)
 
-main()
+main() 
