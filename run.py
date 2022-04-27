@@ -100,17 +100,38 @@ def update_census_worksheet(data):
     census_worksheet.append_row(data)
     print('Census worksheet updated successfully.\n')
 
-    census_last_row = len(SHEET.worksheet("census").get_all_values())
-    census_gender = SHEET.worksheet("census").cell(census_last_row, 4).value
-    print(census_last_row)
-    print(census_gender)
-
     """
     Insert the female information into the female worksheet.
     """
+    census_last_row = len(SHEET.worksheet("census").get_all_values())
+    census_gender = SHEET.worksheet("census").cell(census_last_row, 4).value
     if census_gender == 'F':
         census_worksheet = SHEET.worksheet("female")
         census_worksheet.append_row(data) 
+        
+    """
+    Insert the male information into the male worksheet.
+    """    
+    if census_gender == 'M':
+        census_worksheet = SHEET.worksheet("male")
+        census_worksheet.append_row(data) 
+
+    """
+    Insert who has children information into the children worksheet.
+    """    
+    census_children = SHEET.worksheet("census").cell(census_last_row, 8).value
+    if int(census_children) >= 1:
+        census_worksheet = SHEET.worksheet("with_children")
+        census_worksheet.append_row(data) 
+
+    """
+    Insert who pay rent information into the rent worksheet.
+    """    
+    census_rent = SHEET.worksheet("census").cell(census_last_row, 7).value
+    if census_rent == 'Y':
+        census_worksheet = SHEET.worksheet("pay_rent")
+        census_worksheet.append_row(data) 
+
     
 def main():
     data = get_users_data()
