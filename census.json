@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "census-348312",
+  "private_key_id": "e41b361e067e192a55695e06315a320b1a9a387f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCKzJLI20A5Wg9R\nYdmtzXNZrfRq8lDbXUfeYCbfhu7tJ2wQENsme24XYRyv61RLgme4HVirUXUdfyBr\nAkI7Q8Ors973UEkaDAgjOfUukqD3RY2N+2SjSZjkpkLd+pzhJseSUeiRqilHhNDJ\nPGHhA0aTVfvsJjh8l0jIKJugPQOzO3VwA1YuBlexf1S5wzkOX5mTPeLVXG8NWTSH\nvUflINlV3IMW/fsMbWh3lp4AenGfaKwsoXq50NHTy++belz+P0EjUXBIIJESIMH8\n5aa5YA36dYNzxXFL9UMnkOA5o4tB2SFKa8CWna5oRMWlQ/3zSmcxIaaLUUwbWLRM\nGzNCA14xAgMBAAECggEACS0csDBElvYUCKyYLFQmoeFtBQwHmfUZDQPc1g7Q6Xdf\nftFqd6kV3nBSafP8MvDIZCT2iX79Z+mRblmsIMhqXYXrAf06FAGDITcR9VYG08oy\noVYjMWNqewVd6tiIeh8q9wq4vjaae4q1lfRKwUpK5m87FEHznpMO4gLDRSz7e2Qk\nQPLKHFoG4O+8PKxICggpk/Y1K1EdkD8fqHnWv5bEkP1hAxLZm9B6ayrVLuNjJ+3U\noNHHjAIorkh6b74FzEJb6Z7JFicwh+j6/zKaG5U8HB6hDlWVHLP0SAzv0gNJSHbs\ng+O2geT8jspU51wSw0VrhyxEtEcfPRckjqRLFBeUMQKBgQDBYmTXbPZme6dfXuJ3\nQSHSEigfc5bT0rCphCo/iXWtjvnzolRfyRsZVRsdUqBbohmevS5cPPz+duIr8h5j\nctY93vlf60C53xyLDLAd0g/lfTV3jQ1I3N0LkGbw1iU9YWeGAxbc2Q+CSdjIBeFF\nCvUU0VfOAknCWd3dfNdxI+h8WQKBgQC3vZ2a+T5trL7DY642UDh4TvMLCSC1IZhn\nWbDT5R0mvU087oS6DR7ryiaElJbFVa+Qcnu1hWW5fLiQK7uDPXA9kfhGbdhPqt6V\nQb2LfgxF5IBsgdap5s+4jsaP3bvS2OIqGQo2YQsnicVUkche3xNhUTEW0qFC3vSW\n7Aw/8hPVmQKBgQCanH09UyupAiHt+SGc8OEGYGfdxX+IOYHu9fEFPXRtX8ttQ5Kr\nxlC5LzbvebklqfNL27ruGgC3vfrT4c7z+cNaUiQU0TS9pqjebzV7khANjc6ql4ZQ\ng+ziqv/ye3PooDCxj1S/G3fv1fTQ7wqNNdZ+X2URGvk3vrvIsmBZX7kneQKBgDxl\n+TPjMJFO0ppZ3v99mUJ6+UusYXMJKxb2FblhvBZq7cPUyA58l6h8l/LHAVS22PJL\nn7zIr+qsQ+MobQg0HvwuSoWkQBHYIjjAFnWPJqum9Ew21gCdnbSWQlEyWzZxEs8x\n0fiUJ92EXThyf4IoJC++R7uv21CnB5HA4Dn48mopAoGAStp9jHrcSAlx4ffNv2dq\nAHss2fgYrxSy5+9nDNXk8zQ8PnxBeO5dOt9ziwXZlIIseVw1S1SWC505+Ct7Fn00\nTDDmeA+xsHTrJ/G7VpBItgdoaZCdTaweHybe2jAWsbgmpRkLo+5OTu/6l++VH+kg\n7RitWKEqsvn4JTg2QgFZJoU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "census@census-348312.iam.gserviceaccount.com",
+  "client_id": "115036027603851735212",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/census%40census-348312.iam.gserviceaccount.com"
+}

@@ -12,10 +12,13 @@ SCOPED_CENSUS = CENSUS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CENSUS)
 SHEET = GSPREAD_CLIENT.open('census')
 
+
 """
 census_sheet = SHEET.worksheet('census')
 data = census_sheet.get_all_values()
 print(data)
+
+pip3 install gspread google auth
 """
 
 def get_users_data():
@@ -96,23 +99,21 @@ def update_census_worksheet(data):
     census_worksheet = SHEET.worksheet("census")
     census_worksheet.append_row(data)
     print('Census worksheet updated successfully.\n')
-    
-def update_female_data(census_row):
+
+    census_last_row = len(SHEET.worksheet("census").get_all_values())
+    census_gender = SHEET.worksheet("census").cell(census_last_row, 4).value
+    print(census_last_row)
+    print(census_gender)
+
     """
     Insert the female information into the female worksheet.
     """
-    print('Saving female data.../n')
-
-    female_data = SHEET.worksheet('census').col_values(4)
-    print(female_data)
-    female = [f for f in female_data if ("F" in f)]
-    print(female)
-    female_worksheet = SHEET.worksheet("female")
-    female_worksheet.append_row(female)
-
+    if census_gender == 'F':
+        census_worksheet = SHEET.worksheet("female")
+        census_worksheet.append_row(data) 
+    
 def main():
     data = get_users_data()
     update_census_worksheet(data)
-    update_female_data(data)
 
 main() 
