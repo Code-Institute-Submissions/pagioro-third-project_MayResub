@@ -134,28 +134,28 @@ def update_result_worksheet():
     """
     The number of people searched.
     """    
-    people_number = len(SHEET.worksheet("census").get_all_values())
+    people_number = (len(SHEET.worksheet("census").get_all_values()) - 1)
     census_worksheet = SHEET.worksheet("result")
     census_worksheet.update_cell(2, 1, people_number)    
 
     """
     The number of men.
     """    
-    men_number = len(SHEET.worksheet("male").get_all_values())
+    men_number = (len(SHEET.worksheet("male").get_all_values()) - 1)
     census_worksheet = SHEET.worksheet("result")
     census_worksheet.update_cell(2, 2, men_number) 
 
     """
     The number of women.
     """    
-    women_number = len(SHEET.worksheet("female").get_all_values())
+    women_number = (len(SHEET.worksheet("female").get_all_values()) - 1)
     census_worksheet = SHEET.worksheet("result")
     census_worksheet.update_cell(2, 3, women_number)    
 
     """
     People who pay rent.
     """  
-    rented_number = len(SHEET.worksheet("pay_rent").get_all_values())
+    rented_number = (len(SHEET.worksheet("pay_rent").get_all_values()) - 1)
     census_worksheet = SHEET.worksheet("result")
     census_worksheet.update_cell(2, 4, rented_number)  
 
@@ -163,14 +163,31 @@ def update_result_worksheet():
     People who own their own homes.    
     """   
     owner_number = 0
-    owner_number == people_number - rented_number            
+    owner_number += (people_number - rented_number)  
     census_worksheet = SHEET.worksheet("result")
     census_worksheet.update_cell(2, 5, owner_number)
-    
+
     """
-    How many people have more than three children?
+    How many people have children?
     """   
-    children_last_row = len(SHEET.worksheet("with_children").get_all_values())
+    children_number = (len(SHEET.worksheet("with_children").get_all_values()) - 1)
+    census_worksheet = SHEET.worksheet("result")
+    census_worksheet.update_cell(2, 6, children_number)  
+
+    """
+    Result
+    """  
+    print(f'The number of people searched: {people_number} \n')
+    print(f'The number of men: {men_number} \n')
+    print(f'The number of women: {women_number} \n')
+    print(f'People who pay rent: {rented_number} \n')
+    print(f'People who own their own homes: {owner_number} \n')
+    print(f'How many people have children?: {children_number} \n')
+
+
+    """
+    Tem mais de 3 filhos
+    children_last_row = (len(SHEET.worksheet("with_children").get_all_values()) - 1)
     children_row = 2
     children_number = 0 
     children = SHEET.worksheet("with_children").cell(children_row, 8).value
@@ -182,7 +199,10 @@ def update_result_worksheet():
         children = SHEET.worksheet("with_children").cell(children_row, 8).value
        
     census_worksheet = SHEET.worksheet("result")
-    census_worksheet.update_cell(2, 6, children_number)   
+    census_worksheet.update_cell(2, 6, children_number)  
+
+    """      
+ 
 
 def main():
     data = get_users_data()
