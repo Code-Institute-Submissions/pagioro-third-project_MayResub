@@ -12,7 +12,6 @@ SCOPED_CENSUS = CENSUS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CENSUS)
 SHEET = GSPREAD_CLIENT.open('census')
 
-
 """
 census_sheet = SHEET.worksheet('census')
 data = census_sheet.get_all_values()
@@ -51,8 +50,7 @@ def get_users_data():
     
     user_country = input('\nEnter your country: ')    
 
-    user_city = input('\nEnter your city: ')
-    
+    user_city = input('\nEnter your city: ')    
 
     while True:
         user_rent = input('\nDo you pay rent? (Y or N):  ')
@@ -107,14 +105,14 @@ def update_census_worksheet(data):
     census_gender = SHEET.worksheet("census").cell(census_last_row, 4).value
     if census_gender == 'F':
         census_worksheet = SHEET.worksheet("female")
-        census_worksheet.append_row(data) 
+        census_worksheet.append_row(data)
         
     """
     Insert the male information into the male worksheet.
     """    
     if census_gender == 'M':
         census_worksheet = SHEET.worksheet("male")
-        census_worksheet.append_row(data) 
+        census_worksheet.append_row(data)
 
     """
     Insert who has children information into the children worksheet.
@@ -122,7 +120,7 @@ def update_census_worksheet(data):
     census_children = SHEET.worksheet("census").cell(census_last_row, 8).value
     if int(census_children) >= 1:
         census_worksheet = SHEET.worksheet("with_children")
-        census_worksheet.append_row(data) 
+        census_worksheet.append_row(data)
 
     """
     Insert who pay rent information into the rent worksheet.
@@ -130,11 +128,65 @@ def update_census_worksheet(data):
     census_rent = SHEET.worksheet("census").cell(census_last_row, 7).value
     if census_rent == 'Y':
         census_worksheet = SHEET.worksheet("pay_rent")
-        census_worksheet.append_row(data) 
+        census_worksheet.append_row(data)
 
+def update_result_worksheet():
+    """
+    The number of people searched.
+    """    
+    people_number = len(SHEET.worksheet("census").get_all_values())
+    census_worksheet = SHEET.worksheet("result")
+    census_worksheet.update_cell(2, 1, people_number)    
+
+    """
+    The number of men.
+    """    
+    men_number = len(SHEET.worksheet("male").get_all_values())
+    census_worksheet = SHEET.worksheet("result")
+    census_worksheet.update_cell(2, 2, men_number) 
+
+    """
+    The number of women.
+    """    
+    women_number = len(SHEET.worksheet("female").get_all_values())
+    census_worksheet = SHEET.worksheet("result")
+    census_worksheet.update_cell(2, 3, women_number)    
+
+    """
+    People who pay rent.
+    """  
+    rented_number = len(SHEET.worksheet("pay_rent").get_all_values())
+    census_worksheet = SHEET.worksheet("result")
+    census_worksheet.update_cell(2, 4, rented_number)  
+
+    """
+    People who own their own homes.    
+    """   
+    owner_number = 0
+    owner_number == people_number - rented_number            
+    census_worksheet = SHEET.worksheet("result")
+    census_worksheet.update_cell(2, 5, owner_number)
     
+    """
+    How many people have more than three children?
+    """   
+    children_last_row = len(SHEET.worksheet("with_children").get_all_values())
+    children_row = 2
+    children_number = 0 
+    children = SHEET.worksheet("with_children").cell(children_row, 8).value
+
+    while children_row <= children_last_row:
+        if int(children) > 3:
+            children_number += 1
+        children_row += 1
+        children = SHEET.worksheet("with_children").cell(children_row, 8).value
+       
+    census_worksheet = SHEET.worksheet("result")
+    census_worksheet.update_cell(2, 6, children_number)   
+
 def main():
     data = get_users_data()
     update_census_worksheet(data)
+    update_result_worksheet()
 
-main() 
+main()
