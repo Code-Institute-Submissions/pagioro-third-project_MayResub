@@ -60,11 +60,12 @@ def get_users_data():
             break
 
     while True:
-        user_children = input('\nHow many children do you have? (0 for None):  ')
+        user_children = input('\nHow many children do you have?(0 for None): ')
         if validate_data(5, user_children):
             break
 
-    return user_name, user_email, user_age, user_gender, user_country, user_city, user_rent, user_children
+    return (user_name, user_email, user_age, user_gender,
+            user_country, user_city, user_rent, user_children)
 
 
 def validate_data(value1, value2):
@@ -173,7 +174,8 @@ def update_result_worksheet():
     """
     How many people have children?
     """
-    children_number = (len(SHEET.worksheet("with_children").get_all_values()) - 1)
+    children_number = ((len(SHEET.worksheet("with_children")
+                        .get_all_values())-1))
     census_worksheet = SHEET.worksheet("result")
     census_worksheet.update_cell(2, 6, children_number)
     """
