@@ -30,6 +30,16 @@ Here is the live version of my software!
 
 ![result sheets](./assets/docs/screenshots/header.png)
 
+### Future Features
+
+- Will be added a graph in the results tab.
+
+- Will be added more input data.
+
+
+
+
+
 
 
 
