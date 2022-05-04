@@ -11,13 +11,11 @@ Here is the live version of my software!
 ### Existing Features
 
    - The program starts with the Census welcome message and the message to put data in the fields below.       
-
    - The person must fill in seven fields for data validation to be recorded.
 
 ![person input data](./assets/docs/screenshots/header.png)
 
    - The program is connected to google sheets.
-
    - They go to the main worksheet called Census as we enter the data.
 
 ![main sheet](./assets/docs/screenshots/header.png)
@@ -32,104 +30,44 @@ Here is the live version of my software!
 
 ### Future Features
 
-- Will be added a graph in the results tab.
+   - Will be added a graph in the results tab.
+   - Will be added more input data.
 
-- Will be added more input data.
+# Testing
 
+   - Passed the code through a PEP8 linter and confirmed there are no problems.
+   - All data inputs have been tested and are working perfectly.
+   - The validations in the fields were also tested and are correct. If the person types the email or in the name field with numbers, an error will appear and return to the same field.
 
-
-
-
-
-
-
-
-
+    ![testing](./assets/docs/screenshots/lighthouse.png)
    
 
+# Unfixed Bugs    
 
+   - No unfixed bugs.
 
-- __The Game Options__
+# Fixed Bugs
 
-    - The games options include clear instruction in the footer and the choice of buttons: Rock, Paper and Scissors. 
+   - Th  
 
-    - These options are interactive, and the user can click to make their choice.
+## Validator Testing
 
-![game choice](./assets/docs/screenshots/choice.png)
+   - No errors were returned from PEP8online.com
 
-- __Game results__
+    ![pep8 online](./assets/docs/screenshots/w3chtml.png)
 
-    - If the user chooses an option, the image will change to the one he chooses and randomly, the computer image will also change.
+# Deployment
 
-    - After the computer randomly chooses one, it will be determined the victory of one of the two.
+This project was deployed using Code Institute's mock terminal for Heroku.
+   - Steps for deployment:
+       - Fork or clone this repository
+       - Create a new Heroku app
+       - Link the Heroku app to this repository
+       - Click on deploy
 
-    - The winner is announced to the user above the options button, and the score is updated for either the user or the computer, depending on who on.
+# Credits
 
-    - The results ans score are clear to the user, making the game easy to play, understand who won and waht the score is.
+   - Code institute for the deployment terminal
+   - Love Sandwiches by the example given
+   - Ultimate Battleships Sample README
 
-  ![game results](./assets/docs/screenshots/results.png)
-
-  - __Footer__
-
-     - The footer section show the rules to the user.
-
-  ![footer](./assets/docs/screenshots/footer.png)
-
-    # Testing
-
-    - I tested the game in different browsers and they all work.   
-
-    - I tested the game results and are always correct.
-
-    - The header, instructions, options and footer text are all readable and easy to understand.
-
-    - The colour and fonts are easy to read and accessible by running it through lighthouse in devtools.
-
-    ![accessibility](./assets/docs/screenshots/lighthouse.png)
-
-    - This project is responsive, and works on all screens using devtools device toolbars.
-
-    # Unfixed Bugs    
-
-    - No unfixed bugs.
-
-    # Fixed Bugs
-
-    - The tie was not appearing and was resolved with the code let div = document.getElementById('messages') div.innerHTML = 'Tie!' in the game function
-
-    - The images were not showing up, and I forgot to redirect the code to the correct folder.  
-
-    ## Validator Testing
-
-    - HTML
-        - No errors were returned when passing through the official W3C validator
-
-    ![html w3c validator](./assets/docs/screenshots/w3chtml.png)
-
-    - CSS
-        - No errors were returned when passing through the official (Jigsaw) validator
-
-    ![w3c css validator](./assets/docs/screenshots/w3ccss.png)
-
-
-    # Deployment
-
-    - The site was deployed to GitHub pages. The steps to deploy are as follows:
-
-    - In the GitHub repository, navigate to the Settings tab In the pages section, go to select branch drop-down menu, select Main Once the Main branch has been selected, a link to the site is provided
-
-    - The live link can be found here - https://pagioro.github.io/second-project/
-
-    # Credits
-
-    ### content
-
-    - When making my project, I was inspired by the Code Institute Rock, Paper, Scissors project where I use as an example the HTML structure to build my project.
-
-    - Font was sourced from Google Fonts https://fonts.google.com/
-
-    ### media
-
-    - Pictures were taken from the Google Images.
-
-### Existing Features
