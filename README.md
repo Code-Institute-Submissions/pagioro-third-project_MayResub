@@ -39,7 +39,7 @@ Here is the live version of my software!
    - All data inputs have been tested and are working perfectly.
    - The validations in the fields were also tested and are correct. If the person types the email or in the name field with numbers, an error will appear and return to the same field.
 
-    ![testing](./Readme_ScreenShots/testing.png)
+![testing](./Readme_ScreenShots/testing.png)
    
 
 # Unfixed Bugs    
@@ -54,7 +54,7 @@ Here is the live version of my software!
 
    - No errors were returned from PEP8online.com
 
-    ![pep8 online](./Readme_ScreenShots/PEP8result.png)
+![pep8 online](./Readme_ScreenShots/PEP8result.png)
 
 # Deployment
 
