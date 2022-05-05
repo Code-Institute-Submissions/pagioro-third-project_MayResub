@@ -13,14 +13,8 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CENSUS)
 SHEET = GSPREAD_CLIENT.open('census')
 
 """
-census_sheet = SHEET.worksheet('census')
-data = census_sheet.get_all_values()
-print(data)
-
 pip3 install gspread google auth
 """
-
-
 def get_users_data():
     """
     Get data from the user.
@@ -29,38 +23,38 @@ def get_users_data():
     print('Please fill in the requested data!\n')
 
     while True:
-        user_name = input('Enter your name: ')
+        user_name = input('Enter your name:\n')
         if validate_data(0, user_name):
             break
 
     while True:
-        user_email = input('\nEnter your email: ')
+        user_email = input('Enter your email:\n')
         if validate_data(1, user_email):
             break
 
     while True:
-        user_age = input('\nEnter your age: ')
+        user_age = input('Enter your age:\n')
         if validate_data(2, user_age):
             break
 
     while True:
-        user_gender = input('\nEnter your gender (M or F): ')
+        user_gender = input('Enter your gender (M or F):\n')
         user_gender = user_gender.upper()
         if validate_data(3, user_gender):
             break
 
-    user_country = input('\nEnter your country: ')
+    user_country = input('Enter your country:\n')
 
-    user_city = input('\nEnter your city: ')
+    user_city = input('Enter your city:\n')
 
     while True:
-        user_rent = input('\nDo you pay rent? (Y or N):  ')
+        user_rent = input('Do you pay rent? (Y or N):\n')
         user_rent = user_rent.upper()
         if validate_data(4, user_rent):
             break
 
     while True:
-        user_children = input('\nHow many children do you have?(0 for None): ')
+        user_children = input('How many children do you have?(0 for None):\n')
         if validate_data(5, user_children):
             break
 
@@ -187,24 +181,6 @@ def update_result_worksheet():
     print(f'People who pay rent: {rented_number} \n')
     print(f'People who own their own homes: {owner_number} \n')
     print(f'How many people have children?: {children_number} \n')
-
-    """
-    Tem mais de 3 filhos
-    children_last_row = (len(SHEET.worksheet("with_children")
-                        .get_all_values()) - 1)
-    children_row = 2
-    children_number = 0
-    children = SHEET.worksheet("with_children").cell(children_row, 8).value
-
-    while children_row <= children_last_row:
-        if int(children) > 3:
-            children_number += 1
-        children_row += 1
-        children = SHEET.worksheet("with_children").cell(children_row, 8).value
-
-    census_worksheet = SHEET.worksheet("result")
-    census_worksheet.update_cell(2, 6, children_number)
-    """
 
 
 def main():
