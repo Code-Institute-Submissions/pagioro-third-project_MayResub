@@ -13,7 +13,7 @@ Here is the live version of my software!
    - The program starts with the Census welcome message and the message to put data in the fields below.       
    - The person must fill in seven fields for data validation to be recorded.
 
-![person input data](./Readme_ScreenShots/inputData.png)
+![person input data](./Readme_ScreenShots/census.png)
 
    - The program is connected to google sheets.
    - They data go to the main worksheet called Census.
