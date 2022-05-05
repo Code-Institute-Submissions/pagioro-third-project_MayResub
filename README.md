@@ -2,7 +2,7 @@
 
 Census Survey is a tool for capturing data from a person, and the administrator will have a solid database for future analysis.
 
-![Screenshot of the user data capture program.](./readme_Screenshots/)
+![Screenshot of the user data capture program.](./Readme_ScreenShots/census.png)
 
 Here is the live version of my software!
 
@@ -13,7 +13,7 @@ Here is the live version of my software!
    - The program starts with the Census welcome message and the message to put data in the fields below.       
    - The person must fill in seven fields for data validation to be recorded.
 
-![person input data](./Readme_ScreenShots/census.png)
+![person input data](./Readme_ScreenShots/inputData.png)
 
    - The program is connected to google sheets.
    - They data go to the main worksheet called Census.
