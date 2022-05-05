@@ -1,6 +1,6 @@
 # Census Survey
 
-Sensu survey is a tool for capturing data from a person, and the administrator will have a solid database for future analysis.
+Census Survey is a tool for capturing data from a person, and the administrator will have a solid database for future analysis.
 
 ![Screenshot of the user data capture program.](./readme_Screenshots/)
 
@@ -16,7 +16,7 @@ Here is the live version of my software!
 ![person input data](./Readme_ScreenShots/inputData.png)
 
    - The program is connected to google sheets.
-   - They go to the main worksheet called Census as we enter the data.
+   - They data go to the main worksheet called Census.
 
 ![main sheet](./Readme_ScreenShots/mainSheet.png)
 
@@ -48,7 +48,14 @@ Here is the live version of my software!
 
 # Fixed Bugs
 
-   - Th  
+   - I had difficulties validating capital and lowercase letters in a part of the code, and I solved this by using .upper(). 
+       - user_gender = user_gender.upper() and user_rent = user_rent.upper()
+
+   - I could not calculate the number of lines correctly because it always took the title. I solved it by subtracting by minus one in the code below.
+       -  people_number = (len(SHEET.worksheet("census").get_all_values()) - 1)
+
+   - To change a cell, I used the update_cell command and not .append, which was the error I was making.
+       - census_worksheet.update_cell(2, 1, people_number)
 
 ## Validator Testing
 
