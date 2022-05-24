@@ -15,6 +15,8 @@ SHEET = GSPREAD_CLIENT.open('census')
 """
 pip3 install gspread google auth
 """
+
+
 def get_users_data():
     """
     Get data from the user.
