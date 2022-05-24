@@ -45,19 +45,25 @@ def get_users_data():
         if validate_data(3, user_gender):
             break
 
-    user_country = input('Enter your country:\n')
+    while True:
+        user_country = input('Enter your country:\n')
+        if validate_data(4, user_country):
+            break
 
-    user_city = input('Enter your city:\n')
+    while True:
+        user_city = input('Enter your city:\n')
+        if validate_data(5, user_city):
+            break
 
     while True:
         user_rent = input('Do you pay rent? (Y or N):\n')
         user_rent = user_rent.upper()
-        if validate_data(4, user_rent):
+        if validate_data(6, user_rent):
             break
 
     while True:
         user_children = input('How many children do you have?(0 for None):\n')
-        if validate_data(5, user_children):
+        if validate_data(7, user_children):
             break
 
     return (user_name, user_email, user_age, user_gender,
@@ -69,7 +75,10 @@ def validate_data(value1, value2):
         """
         In the first if checks if the value2 has at least one number.
         """
-        if ((value1 == 0) and (any(chr.isdigit() for chr in value2))):
+        if ((value1 == 0) and ((any(chr.isdigit() for chr in value2)))):
+            raise ValueError()
+        if ((value1 == 0) and (value2 == '')):
+            print('The field must be filled!')
             raise ValueError()
         if ((value1 == 1) and ('@' not in value2)):
             raise ValueError()
@@ -77,9 +86,19 @@ def validate_data(value1, value2):
             raise ValueError()
         if ((value1 == 3) and (value2 not in ['M', 'm', 'F', 'f'])):
             raise ValueError()
-        if ((value1 == 4) and (value2 not in ['Y', 'y', 'N', 'n'])):
+        if ((value1 == 4) and ((any(chr.isdigit() for chr in value2)))):
             raise ValueError()
-        if ((value1 == 5) and (int(value2) >= 12)):
+        if ((value1 == 4) and (value2 == '')):
+            print('The field must be filled!')
+            raise ValueError()
+        if ((value1 == 5) and ((any(chr.isdigit() for chr in value2)))):
+            raise ValueError()
+        if ((value1 == 5) and (value2 == '')):
+            print('The field must be filled!')
+            raise ValueError()
+        if ((value1 == 6) and (value2 not in ['Y', 'y', 'N', 'n'])):
+            raise ValueError()
+        if ((value1 == 7) and (int(value2) >= 12)):
             raise ValueError()
     except ValueError as e:
         print(f'Invalid data.\n')
