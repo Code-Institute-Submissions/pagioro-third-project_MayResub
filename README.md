@@ -6,7 +6,7 @@ Census Survey is a tool for capturing data from a person, and the administrator 
 
 [Here is the live version of my software!](https://third-project-census.herokuapp.com/)
 
-[Here is the google sheets data!](bit.ly/3MQfbb8)
+[Here is the google sheets data!](https://docs.google.com/spreadsheets/d/1h8qsWk0Q3EEqi7zpqlX5rRxLMbBciOyYTID0DMKAOfU/edit?usp=sharing)
 
 # Features
 

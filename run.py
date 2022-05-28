@@ -19,8 +19,6 @@ def get_users_data():
     """
     print('Welcome to the 2022 Census.')
     print('Please fill in the requested data!\n')
-    print('To access the results, use the link below:')
-    print('bit.ly/3MQfbb8\n')
 
     while True:
         user_name = input('Enter your name:\n')
