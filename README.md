@@ -39,7 +39,25 @@ Census Survey is a tool for capturing data from a person, and the administrator 
    - All data inputs have been tested and are working perfectly.
    - The validations in the fields were also tested and are correct. If the person types the email or in the name field with numbers, an error will appear and return to the same field.
 
-![testing](./Readme_ScreenShots/testing.png)
+![testing input data](./Readme_ScreenShots/inputData.png)
+
+   - The program presents an error when testing the blank name field and returns to the same field.
+   - The program returns an error when testing the name field with a number and returns to the name field.
+   - When testing the name field with letters and numbers, the program returns an error and returns to the name field.
+
+![testing name field](./Readme_ScreenShots/testingName.png)
+
+   - The program presents an error when testing the blank email field and returns to the same field.
+   - The program returns an error when testing the email field with letters only and returns to the same field.
+   - When testing the email field with letters and numbers, the program returns an error and returns to the same field.
+   - When testing the email field with numbers, the program returns an error and returns to the same field.
+
+![testing email field](./Readme_ScreenShots/testingEmail.png)
+
+   - The program presents an error when testing the blank email field and returns to the same field.
+   - The program returns an error when testing the email field with letters only and returns to the same field.
+   - When testing the email field with letters and numbers, the program returns an error and returns to the same field.
+   - When testing the email field with numbers, the program returns an error and returns to the same field.
    
 
 # Unfixed Bugs    
