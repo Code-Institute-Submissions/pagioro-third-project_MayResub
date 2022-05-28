@@ -16,7 +16,7 @@ Census Survey is a tool for capturing data from a person, and the administrator 
 ![person input data](./Readme_ScreenShots/inputData.png)
 
    - The program is connected to google sheets.
-   - They data go to the main worksheet called Census.
+   - The data go to the main worksheet called Census.
 
 ![main sheet](./Readme_ScreenShots/mainSheet.png)
 
@@ -37,15 +37,12 @@ Census Survey is a tool for capturing data from a person, and the administrator 
 
    - Passed the code through a PEP8 linter and confirmed there are no problems.
    - All data inputs have been tested and are working perfectly.
-   - The validations in the fields were also tested and are correct. If the person types the email or in the name field with numbers, an error will appear and return to the same field.
-
-![testing input data](./Readme_ScreenShots/inputData.png)
-
    - The program presents an error when testing the blank name field and returns to the same field.
    - The program returns an error when testing the name field with a number and returns to the name field.
    - When testing the name field with letters and numbers, the program returns an error and returns to the name field.
 
 ![testing name field](./Readme_ScreenShots/testingName.png)
+
 
    - The program presents an error when testing the blank email field and returns to the same field.
    - The program returns an error when testing the email field with letters only and returns to the same field.
@@ -54,11 +51,59 @@ Census Survey is a tool for capturing data from a person, and the administrator 
 
 ![testing email field](./Readme_ScreenShots/testingEmail.png)
 
-   - The program presents an error when testing the blank email field and returns to the same field.
-   - The program returns an error when testing the email field with letters only and returns to the same field.
-   - When testing the email field with letters and numbers, the program returns an error and returns to the same field.
-   - When testing the email field with numbers, the program returns an error and returns to the same field.
+
+   - The program presents an error when testing the blank age field and returns to the same field.
+   - The program returns an error when testing the age field with letters only and returns to the same field.
+   - When testing the age field with letters and numbers, the program returns an error and returns to the same field.
+   - When testing the age field with special character, the program returns an error and returns to the same field.   
    
+![testing email field](./Readme_ScreenShots/testingAge.png)
+
+
+   - The program presents an error when testing the blank gender field and returns to the same field.
+   - The program returns an error when testing the gender field with special character and returns to the same field.
+   - When testing the gender field with letters that are different from M and F, the program returns an error and returns to the same field.
+
+![testing email field](./Readme_ScreenShots/testingGender.png)
+
+
+   - The program presents an error when testing the blank country field and returns to the same field.
+   - The program returns an error when testing the country field with special character and returns to the same field.
+   - The program returns an error when testing the country field with names that are not in the world country list and returns to the same field.
+
+![testing email field](./Readme_ScreenShots/testingCountry.png)
+
+
+   - The program presents an error when testing the blank city field and returns to the same field.
+   - The program returns an error when testing the city field with special character and returns to the same field.
+   - The program returns an error when testing the city field with numbers and returns to the same field.  
+
+![testing email field](./Readme_ScreenShots/testingCity.png)
+
+
+   - The program presents an error when testing the blank rent field and returns to the same field.
+   - The program returns an error when testing the rent field with special character and returns to the same field.
+   - The program returns an error when testing the rent field with numbers and returns to the same field.  
+
+![testing email field](./Readme_ScreenShots/testingRent.png)
+
+
+   - The program presents an error when testing the blank children field and returns to the same field.
+   - The program returns an error when testing the children field with special character and returns to the same field.
+   - The program returns an error when testing the children field with letters and returns to the same field.
+   - The program returns an error when testing the children field with numbers higher than 12 and returns to the same field.  
+
+![testing email field](./Readme_ScreenShots/testingChildren.png)
+
+
+
+
+
+  
+
+   
+
+
 
 # Unfixed Bugs    
 
